@@ -20,7 +20,6 @@
             color: #fff;
         }
 
-        /* Parallax Container */
         .parallax-container {
             height: 100vh;
             overflow-x: hidden;
@@ -44,7 +43,6 @@
             transform: translateZ(0);
         }
 
-        /* NYC Skyline Background */
         .nyc-skyline {
             position: fixed;
             bottom: 0;
@@ -91,7 +89,6 @@
             100% { opacity: 1; }
         }
 
-        /* Building positions */
         .building:nth-child(1) { left: 5%; width: 8%; height: 70%; animation-delay: 0s; }
         .building:nth-child(2) { left: 15%; width: 12%; height: 85%; animation-delay: 0.5s; }
         .building:nth-child(3) { left: 30%; width: 10%; height: 75%; animation-delay: 1s; }
@@ -100,7 +97,6 @@
         .building:nth-child(6) { left: 75%; width: 12%; height: 80%; animation-delay: 2.5s; }
         .building:nth-child(7) { left: 90%; width: 10%; height: 70%; animation-delay: 3s; }
 
-        /* Neon Signs */
         .neon-signs {
             position: fixed;
             top: 0;
@@ -226,7 +222,6 @@
             box-shadow: 0 10px 30px rgba(255, 0, 128, 0.7);
         }
 
-        /* Dream Cards Section */
         .dreams-section {
             padding: 5rem 2rem;
             background: rgba(0, 0, 0, 0.8);
@@ -308,7 +303,6 @@
             line-height: 1.6;
         }
 
-        /* Taxi Animation */
         .taxi {
             position: fixed;
             bottom: 15%;
@@ -322,7 +316,6 @@
             100% { left: 100vw; }
         }
 
-        /* Birthday Message Modal */
         .modal {
             position: fixed;
             top: 0;
@@ -391,7 +384,6 @@
             box-shadow: 0 5px 15px rgba(255, 0, 128, 0.5);
         }
 
-        /* Responsive Design */
         @media (max-width: 768px) {
             .hero-title {
                 font-size: 2.5rem;
@@ -527,10 +519,8 @@
     </div>
 
     <script>
-        // Get the audio element
         const birthdayAudio = document.getElementById('birthdayAudio');
 
-        // Parallax Effect
         window.addEventListener('scroll', () => {
             const scrolled = window.pageYOffset;
             const parallaxElements = document.querySelectorAll('.parallax-back');
@@ -541,31 +531,25 @@
             });
         });
 
-        // Modal Functions
         function showModalAndPlaySong() {
             document.getElementById('birthdayModal').classList.add('show');
-            // Play the birthday song
             birthdayAudio.play().catch(error => {
-                // Autoplay might be blocked by the browser, handle accordingly if needed
                 console.log("Audio playback was prevented:", error);
             });
         }
 
         function hideModalAndStopSong() {
             document.getElementById('birthdayModal').classList.remove('show');
-            // Pause the birthday song
             birthdayAudio.pause();
-            birthdayAudio.currentTime = 0; // Rewind to the beginning
+            birthdayAudio.currentTime = 0;
         }
 
-        // Close modal on outside click
         document.getElementById('birthdayModal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
                 hideModalAndStopSong();
             }
         });
 
-        // Dynamic neon sign content
         const neonMessages = [
             'HAPPY BIRTHDAY!',
             'NYC DREAMS',
@@ -584,10 +568,8 @@
             });
         }
 
-        // Update neon signs every 10 seconds
         setInterval(updateNeonSigns, 10000);
 
-        // Add floating elements
         function createFloatingElement() {
             const elements = ['🎂', '🎉', '🎈', '⭐', '✨', '🗽'];
             const element = document.createElement('div');
@@ -605,7 +587,6 @@
             setTimeout(() => element.remove(), 8000);
         }
 
-        // Add float animation
         const style = document.createElement('style');
         style.textContent = `
             @keyframes floatUp {
@@ -621,14 +602,12 @@
         `;
         document.head.appendChild(style);
 
-        // Create floating elements periodically
         setInterval(createFloatingElement, 3000);
 
-        // Smooth scrolling for better parallax effect
         document.addEventListener('DOMContentLoaded', () => {
-            // Add smooth scroll behavior
             document.documentElement.style.scrollBehavior = 'smooth';
         });
     </script>
 <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'970bd91e167dc266',t:'MTc1NTQ2MTc3NS4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+
 </html>
